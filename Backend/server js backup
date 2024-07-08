@@ -1,0 +1,124 @@
+const express = require('express');
+const bodyParser = require('body-parser');
+const mysql = require('mysql2/promise');
+const cors = require('cors');
+const session = require('express-session');
+const MySQLStore = require('express-mysql-session')(session);
+
+const app = express();
+const port = 3000;
+
+// MySQL pool setup
+const pool = mysql.createPool({
+  host: 'localhost',
+  user: 'root',
+  password: '',
+  database: 'ta_smarttarget',
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0
+});
+
+// Session store using the MySQL pool
+const sessionStore = new MySQLStore({}, pool);
+
+// CORS middleware setup
+const corsOptions = {
+  origin: 'http://localhost', // Adjust this to match the actual origin of your frontend
+  credentials: true, // This must be true if you want to send/receive cookies
+};
+
+app.use(cors(corsOptions));
+app.options('*', cors(corsOptions)); // Enable preflight requests for all routes
+
+// Body parser middleware
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// Session configuration
+const sessionConfig = {
+  name: 'connect.sid', // Use a single session cookie name, 'connect.sid' is the default name
+  secret: 'eUEUUqxhYwe57Dfn8CSCEDE7EFytusmb',
+  store: sessionStore,
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    secure: false, // Set to true when serving over HTTPS
+    httpOnly: true, // Recommended setting for security
+    sameSite: 'lax' // Adjust this according to your requirements
+  }
+};
+
+app.use(session(sessionConfig));
+
+app.use((req, res, next) => {
+  console.log('Session ID:', req.sessionID);
+  console.log('Session User:', req.session.userId);
+  next();
+});
+
+// Route to set active user in the session
+app.post('/set_active_user', (req, res) => {
+  const { userId } = req.body;
+  
+  // Only regenerate session if the userId changes
+  if (req.session.userId !== userId) {
+    req.session.regenerate((err) => {
+      if (err) {
+        console.error('Session regeneration failed:', err);
+        return res.status(500).send('Error updating session.');
+      }
+      // Set the new userId
+      req.session.userId = userId;
+      console.log(`Session ID regenerated. Active user set in the session: ${userId}`);
+      res.status(200).send(`Active user set to: ${userId}`);
+    });
+  } else {
+    console.log(`Active user remains the same: ${req.session.userId}`);
+    res.status(200).send(`Active user remains the same.`);
+  }
+});
+
+
+
+// Route to handle incoming power data
+app.post('/power', (req, res) => {
+  const { power, highestLoad, highestSpeed } = req.body;
+  console.log('Received power data:', req.body);
+  console.log(`Active user changed in the session: ${req.session.userId}`);
+  if (!req.session.userId) {
+    console.error('No active user has been set.');
+    return res.status(400).send('No active user has been set.');
+  }
+
+  const sql = 'INSERT INTO data_st (user_id, power, highest_load, highest_speed, timestamp) VALUES (?, ?, ?, ?, NOW())';
+  pool.query(sql, [req.session.userId, power, highestLoad, highestSpeed])
+    .then(([results]) => {
+      console.log(`Data inserted with ID: ${results.insertId}`);
+      res.status(201).send(`Data inserted with ID: ${results.insertId}`);
+    })
+    .catch(error => {
+      console.error('Error inserting data:', error);
+      res.status(500).send('Error inserting data into the database.');
+    });
+});
+
+// Diagnostic route to check the session info
+app.get('/session-info', (req, res) => {
+  res.status(200).json({
+    sessionId: req.sessionID,
+    userId: req.session.userId,
+  });
+});
+
+//debugging
+app.get('/debug-session', (req, res) => {
+  console.log(req.session); // Log the full session object
+  res.status(200).json(req.session); // Send back the full session object
+});
+
+
+// Start the Express server
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});

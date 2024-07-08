@@ -1,0 +1,54 @@
+<ew-language date="2024/5/21" id="en-US" author="e.World Technology Limited">
+  <project>
+    <phrase id="bodytitle" value="Smart Target" />
+    <phrase id="footertext" value="&amp;copy;2024 Afif_AR. All rights reserved." />
+    <menu id="1">
+      <phrase id="menutext" value="data st" />
+    </menu>
+    <menu id="2">
+      <phrase id="menutext" value="users st" />
+    </menu>
+    <table id="data_st">
+      <phrase id="tblcaption" value="data st" />
+      <field id="data_id">
+        <phrase id="fldcaption" value="data id" />
+      </field>
+      <field id="user_id">
+        <phrase id="fldcaption" value="user id" />
+      </field>
+      <field id="power">
+        <phrase id="fldcaption" value="power" />
+      </field>
+      <field id="highest_load">
+        <phrase id="fldcaption" value="highest load" />
+      </field>
+      <field id="highest_speed">
+        <phrase id="fldcaption" value="highest speed" />
+      </field>
+      <field id="timestamp">
+        <phrase id="fldcaption" value="timestamp" />
+      </field>
+    </table>
+    <table id="users_st">
+      <phrase id="tblcaption" value="users st" />
+      <field id="user_id">
+        <phrase id="fldcaption" value="user id" />
+      </field>
+      <field id="name">
+        <phrase id="fldcaption" value="name" />
+      </field>
+      <field id="sports">
+        <phrase id="fldcaption" value="sports" />
+      </field>
+      <field id="weight_kg">
+        <phrase id="fldcaption" value="weight kg" />
+      </field>
+      <field id="height_cm">
+        <phrase id="fldcaption" value="height cm" />
+      </field>
+      <field id="sex">
+        <phrase id="fldcaption" value="sex" />
+      </field>
+    </table>
+  </project>
+</ew-language>
