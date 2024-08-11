@@ -51,8 +51,8 @@ To set up the web interface, follow these steps:
       node server.js
       ```
 
-    > [!NOTE]  
-    > Make sure you are in the `Backend` directory when starting the server.
+> [!NOTE]
+> Make sure you are in the `Backend` directory when starting the server.
 
 5. **Configure XAMPP:**
     - Open the XAMPP Control Panel.
