@@ -12,4 +12,4 @@ To set up the microcontroller connection, follow these steps:
 3. Upload to microcontroller
 
 > [!IMPORTANT] 
-> Make sure to use the same connection with the Host
+> Ensure that the microcontroller uses the same network connection as the Host.
