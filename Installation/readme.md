@@ -9,7 +9,7 @@ To set up the microcontroller connection, follow these steps:
     - SSID name
     - SSID password 
     - Host IP
-3. **Upload to microcontroller***
+3. **Upload to microcontroller**
 
 > [!IMPORTANT] 
 > Ensure that the microcontroller uses the same network connection as the Host.
