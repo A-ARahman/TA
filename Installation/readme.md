@@ -71,4 +71,3 @@ To set up the web interface, follow these steps:
 
 ---
 
-This version should be clearer and easier to follow. Let me know if you need any more changes!
