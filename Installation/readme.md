@@ -64,7 +64,7 @@ To set up the web interface, follow these steps:
     - In the XAMPP Control Panel, click `Start` for both Apache and MySQL.
     - Click `Admin` for MySQL, which will open phpMyAdmin.
     - Create a new database and name it `ta_smarttarget`.
-    - Download the [Database template](/ta_smarttarget (7).sql) and import it into the `ta_smarttarget` database.
+    - Download the [Database template]([/ta_smarttarget (7).sql](https://github.com/A-ARahman/TA-SmartTarget/blob/main/ta_smarttarget%20(7).sql)) and import it into the `ta_smarttarget` database.
 
 7. **Access the Web Interface:**
     - Open your web browser and go to: `http://localhost/"Your New Folder Name"/Frontend/Dashboard.php`.
