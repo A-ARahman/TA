@@ -1,7 +1,7 @@
 # Installation
 This is the installation guide for Smart Target
 
-## Update the Microcontroller Code
+## Microcontroller Set Up
 To set up the microcontroller connection, follow these steps:
 
 1. **Download the code in [Arduino folder](/Arduino/SmartTarget.ino)**
