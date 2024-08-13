@@ -19,10 +19,17 @@ For Installation Guide and User Guideline you can access this folders
 
 **Web Interface**
 - Dashboard
+  
 ![Dashboard](Images/Dashboard.jpg)
+
 - Testing Page
+  
 ![Testing](Images/Testing.jpg)
+
 - User Database
+  
 ![UserDB](Images/DatabaseWeb.jpg)
+
 - Punching Pad
+  
 ![Samsak](Images/Samsak.png)
