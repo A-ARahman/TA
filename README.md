@@ -19,10 +19,8 @@ For Installation Guide and User Guideline you can access this folders
 
 **Web Interface**
 - Dashboard
-
 ![Dashboard](Images/Dashboard.jpg)
 - Testing Page
 ![Dashboard](Images/Testing.jpg)
 - Dashboard
-
 ![Dashboard](Images/DatabaseWeb.jpg)
