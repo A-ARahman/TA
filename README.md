@@ -11,7 +11,7 @@ Where:
 
 For Installation Guide and User Guideline you can access this folders
 
-[Installation Guide](https://github.com/A-ARahman/TA-SmartTarget/tree/main/Installation)
+[Installation Guide](Installation)
 
 [User Guidelines](https://github.com/A-ARahman/TA-SmartTarget/blob/main/User%20Guidelines/readme.md)
 
