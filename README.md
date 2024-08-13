@@ -20,4 +20,4 @@ For Installation Guide and User Guideline you can access this folders
 **Web Interface**
 - Dashboard
 
-![Dashboard](/Images/Screenshot2024-07-17105239.jpg)
+![Dashboard](Images/Dashboard.jpg)
