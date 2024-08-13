@@ -44,5 +44,4 @@ To conduct a user test, follow these steps:
      ![Set Active User](Images/userguide3.jpg)
 
    > [!NOTE]
-   > Ensure that a confirmation message appears, indicating that you have successfully set the active user. It should look like the image below before you start inputting data.
- 
+   > Ensure that a confirmation message appears, indicating that you have successfully set the active user. It should look like the image below before you start inputting data. ![note](Images/userguide6.jpg)
