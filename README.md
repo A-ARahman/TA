@@ -16,3 +16,8 @@ For Installation Guide and User Guideline you can access this folders
 [User Guidelines](https://github.com/A-ARahman/TA-SmartTarget/blob/main/User%20Guidelines/readme.md)
 
 ## Documentation
+
+**Web Interface**
+- Dashboard
+
+! [Dashboard](Images/Screenshot 2024-07-17 105239.jpg)
