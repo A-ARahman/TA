@@ -25,4 +25,4 @@ For Installation Guide and User Guideline you can access this folders
 - User Database
 ![UserDB](Images/DatabaseWeb.jpg)
 - Punching Pad
-![Samsak](Images/Samsak.jpg)
+![Samsak](Images/Samsak.png)
